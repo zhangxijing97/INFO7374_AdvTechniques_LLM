@@ -159,3 +159,79 @@ test_pred_y = model.predict(test_x)
 test_accuracy = accuracy_score(test_y, test_pred_y)
 print("Test Accuracy:", test_accuracy)
 ```
+
+# Lecture 3
+
+```python
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from keras.models import Sequential
+from keras.layers import Dense, Input
+
+# Input Dataset
+org_df = pd.read_csv("/Users/zhangxijing/MasterNEU/INFO7374_AdvTechniques_LLM/Datasets/income_ds.csv")
+
+# Labels and Features
+label_df = org_df.loc[:, org_df.columns == 'High_Income']
+feat_df = org_df.loc[:, org_df.columns != 'High_Income']
+
+# Encode Categorical Variables
+feat_df = pd.get_dummies(feat_df, dtype='int')
+
+# Normalize Features
+feat_df = (feat_df - feat_df.mean()) / feat_df.std()
+
+# Split Train and Test Data (75% Train, 25% Test)
+x_train, x_test, y_train, y_test = train_test_split(feat_df, label_df, test_size=0.25, random_state=42)
+
+# Model 1: One Hidden Layer with 6 Units
+model_1 = Sequential()
+model_1.add(Dense(units=6, activation='relu', input_shape=(x_train.shape[1],)))
+model_1.add(Dense(units=1, activation='sigmoid'))
+
+# Set Optimizer, Loss Function, and Metrics
+model_1.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+
+# Train Model 1
+model_1.fit(x_train, y_train, epochs=500, verbose=1)
+print(model_1.summary())
+
+# Accuracy of Model 1 on Test Data
+loss_1, accuracy_1 = model_1.evaluate(x_test, y_test)
+print('Model 1 - accuracy=', accuracy_1, ' , loss=', loss_1)
+
+# Compare the Results
+print('Comparison:')
+print('Model 1: One Hidden Layer with 6 Units - accuracy=', accuracy_1, ', loss=', loss_1)
+```
+
+# Lecture 4
+
+### Byte-Pair Encoding (BPE) Example
+
+BPE is a tokenization technique that merges frequent character pairs in text to create a compact vocabulary, allowing NLP models to handle complex and rare words more efficiently.
+
+#### Example Process
+1. **Initial Representation**: Start with individual characters as tokens for each word.
+   - Training data: ["low", "lower", "lowest"]
+   - Initial tokens:
+     - `low` = `[l, o, w]`
+     - `lower` = `[l, o, w, e, r]`
+     - `lowest` = `[l, o, w, e, s, t]`
+
+2. **Merge Frequent Pairs**:
+   - The most frequent pair `[l, o]` is merged to form `lo`:
+     - `low` = `[lo, w]`
+     - `lower` = `[lo, w, e, r]`
+     - `lowest` = `[lo, w, e, s, t]`
+
+   - Next, `[lo, w]` is the most frequent, so merge it to form `low`:
+     - `low` = `[low]`
+     - `lower` = `[low, e, r]`
+     - `lowest` = `[low, e, s, t]`
+
+3. **Repeat Until Threshold**:
+   - Continue merging pairs until reaching a maximum vocabulary size or no pairs meet the frequency threshold.
+
+#### Purpose
+BPE builds a vocabulary of common subwords, making it efficient for models to handle large vocabularies and recognize parts of rare words by breaking them into familiar subunits.
