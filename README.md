@@ -235,3 +235,88 @@ BPE is a tokenization technique that merges frequent character pairs in text to 
 
 #### Purpose
 BPE builds a vocabulary of common subwords, making it efficient for models to handle large vocabularies and recognize parts of rare words by breaking them into familiar subunits.
+
+min_frequency=2: Only merges character pairs that appear at least twice in the corpus.<br>
+vocab_size=30: Limits the vocabulary size to 30 tokens, meaning only the most frequent pairs are retained.<br>
+
+```python
+from tokenizers import Tokenizer
+from tokenizers.models import BPE
+from tokenizers.trainers import BpeTrainer
+from tokenizers import CharBPETokenizer
+
+# Instantiate tokenizer
+tokenizer = CharBPETokenizer()
+
+tokenizer.train([ "/Users/zhangxijing/MasterNEU/INFO7374_AdvTechniques_LLM/Datasets//sample.txt"],min_frequency=2, vocab_size=30)
+
+print(tokenizer.get_vocab())
+
+output = tokenizer.encode("highest")
+print(output.tokens)
+
+output = tokenizer.encode("newer")
+print(output.tokens)
+print(output.ids)
+
+output = tokenizer.encode("higher is better")
+print(output.tokens)
+```
+
+# Lecture 5
+
+**Word2Vec** is a technique that creates vector representations of words, capturing semantic relationships based on context. It enables words with similar meanings to have similar vectors, useful for NLP tasks.
+
+### Key Concepts
+
+- **Models**:
+  - **CBOW**: Predicts target words from surrounding words, faster and good for common words.
+  - **Skip-Gram**: Predicts surrounding words from a target word, effective for rare words.
+  
+- **Window Size**: Determines the context range. Smaller sizes capture local context, larger ones capture broader relationships.
+
+- **Advantages**:
+  - **Dense Vectors**: Efficient, capturing rich semantics.
+  - **Semantic Similarity**: Similar words are close in vector space, revealing relationships.
+
+- **Limitations**: Static embeddings; each word has one vector regardless of context (e.g., "bank" as a place vs. riverbank).
+
+Word2Vec is used in NLP tasks like sentiment analysis and document similarity for its ability to represent word relationships.
+
+
+
+
+```python
+from gensim.models.word2vec import Word2Vec
+import gensim.downloader as api
+from sklearn.cluster import KMeans
+import numpy as np
+
+corpus = api.load('text8')
+
+# Train Word2Vec model
+model = Word2Vec(sentences=corpus, window=5, vector_size=70)
+
+print("Embedding vector for Paris is: ", model.wv['paris'])
+
+print('Similar to France: ', model.wv.similar_by_vector (model.wv['france'],topn=3))
+print('Similar to Paris: ', model.wv.similar_by_vector (model.wv['paris'],topn=3))
+
+# Find most similar embeddings to a transformed embedding
+transform = model.wv['france'] - model.wv['paris']
+print('Transform: ', model.wv.similar_by_vector ( transform + model.wv['madrid'] ,topn=3))
+
+# Some word embeddings
+embeddings =np.array([
+model.wv['paris'] , model.wv['he'],
+model.wv['vienna'] , model.wv['she']
+])
+
+# K-means clustering
+kmeans = KMeans(n_clusters=2)
+kmeans.fit(embeddings)
+
+# Print cluster assignments
+for i, label in enumerate(kmeans.labels_):
+    print("Embedding ", i, " is in cluster ", label)
+```
