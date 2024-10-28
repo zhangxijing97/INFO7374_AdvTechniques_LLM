@@ -9,9 +9,21 @@
 5. [Lecture 5](#lecture-5)
 5. [Lecture 6](#lecture-6)
 
-## Lecture 1
+# Lecture 1
 
-### Supervised Learning and K-Nearest Neighbors (KNN)
+## Supervised Learning and K-Nearest Neighbors (KNN)
+
+1. **Training the Model with `train_x` and `train_y`**:
+   - Using `knn.fit(train_x, train_y)`, we store the `train_x` data points and their corresponding labels from `train_y`. KNN doesn’t learn parameters but simply stores the training data.
+
+2. **Predicting Labels for `test_x`**:
+   - When calling `knn.predict(test_x)`, each point in `test_x` is compared to all points in `train_x` to find its \(k\) nearest neighbors.
+   - **Classification Decision**:
+     - Based on the labels of these \(k\) nearest neighbors in `train_x`, the model assigns the most common label to the `test_x` point.
+
+### Summary
+- `train_x` serves as the reference set to find neighbors.
+- `test_x` is the set of new data points for which we predict labels based on the majority vote among the \(k\) nearest neighbors in `train_x`.
 
 ### K-Nearest Neighbors (KNN) Example
 
