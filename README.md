@@ -328,3 +328,29 @@ kmeans.fit(embeddings)
 for i, label in enumerate(kmeans.labels_):
     print("Embedding ", i, " is in cluster ", label)
 ```
+
+# Lecture 6
+
+### Example with Starting Phrase: "The cat"
+
+#### Greedy Search
+- **Process**: Selects the highest probability word at each step without looking ahead.
+- **Steps**:
+  - Step 1: “is” (0.5)
+  - Step 2: “on” (0.6)
+  - Step 3: “the” (0.7)
+  - Step 4: “mat” (0.8)
+- **Result**: “The cat is on the mat.”
+
+#### Beam Search (Beam Width = 2)
+- **Process**: Keeps top 2 sequences at each step, considering cumulative probabilities.
+- **Steps**:
+  - Step 1: Top paths - “is” (0.5), “sat” (0.3)
+  - Step 2: Continue with best paths - “is on” (0.3), “sat on” (0.18)
+  - Step 3: “is on the” (0.21), “sat on the” (0.126)
+  - Step 4: “is on the mat” (0.168), “sat on the mat” (0.1008)
+- **Result**: “The cat is on the mat.”
+
+**Summary**:
+- **Greedy Search**: Fast but short-sighted.
+- **Beam Search**: More thorough, considering multiple paths, often yielding more coherent sequences.
