@@ -70,7 +70,6 @@ With \( K=3 \), the most common class among the nearest neighbors is "Dog" (2 ou
 
 KNN is ideal for smaller datasets where relationships are straightforward, and similarity in feature space is an effective way to predict labels.
 
-
 ```python
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -100,4 +99,63 @@ accuracy_knn_3 = accuracy_score(test_y, test_pred_y_3)
 print(f"Accuracy of KNN-3: {accuracy_knn_3:.4f}")
 ```
 
-## Lecture 2
+# Lecture 2
+
+## Logistic Regression
+
+Logistic Regression is a statistical method for **binary classification** tasks, where the outcome is categorical (e.g., spam or not spam). It’s particularly useful for situations where the dependent variable is binary.
+
+#### Key Concepts
+- **Sigmoid Function**: Maps output values to a range between 0 and 1, making it ideal for representing probabilities. The sigmoid function is defined as:
+
+  `σ(z) = 1 / (1 + e^(-z))`
+
+  where `z` is a linear combination of input features.
+
+- **Binary Classification**: Logistic regression can predict the probability `P(Y=1|x)` that an input `x` belongs to the positive class. A threshold (e.g., 0.5) is used for classification:
+  - If the probability > 0.5, classify as Class 1.
+  - Otherwise, classify as Class 0.
+
+#### Example of Logistic Regression
+Suppose we want to predict whether an email is spam based on the frequency of certain keywords. Features could include:
+- **Feature 1**: Count of the word "free"
+- **Feature 2**: Count of the word "win"
+
+After training, the model might give the equation:
+
+`Spam = σ(0.5 * Free_Count + 0.8 * Win_Count - 1.0)`
+
+For classification:
+1. **If `σ(1.6) ≈ 0.832`** (for input values `Free_Count=2` and `Win_Count=1`), classify as **spam** (since 0.832 > 0.5).
+2. **If `σ(-0.5) ≈ 0.377`** (for input values `Free_Count=1` and `Win_Count=0`), classify as **not spam** (since 0.377 < 0.5).
+
+This example demonstrates how logistic regression can be used to calculate the probability of belonging to a certain class and classify based on a threshold.
+
+```python
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score
+
+# Load the dataset
+org_df = pd.read_csv("/Users/zhangxijing/MasterNEU/INFO7374_AdvTechniques_LLM/Datasets/heart_attack.csv")
+
+#Define features and label
+label_df =  org_df.loc[:,org_df.columns == 'heart_attack']
+feat_df =  org_df.loc[:,org_df.columns != 'heart_attack']
+
+# Split dataset into training (75%) and test (25%) data
+train_x, test_x, train_y, test_y = train_test_split(feat_df, label_df, test_size=0.25, random_state=42)
+
+# Create and train the Logistic Regression model
+model = LogisticRegression(max_iter=10000)  # Increase max_iter if convergence issues arise
+model.fit(train_x, train_y)
+
+# Make predictions on the test data
+test_pred_y = model.predict(test_x)
+
+# Calculate accuracy of the model for test data
+test_accuracy = accuracy_score(test_y, test_pred_y)
+print("Test Accuracy:", test_accuracy)
+```
