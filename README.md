@@ -283,9 +283,17 @@ print(output.tokens)
 
 Word2Vec is used in NLP tasks like sentiment analysis and document similarity for its ability to represent word relationships.
 
+### The instruction is to train a **Word2Vec model on the text8 dataset** using different combinations of these hyper-parameters:
 
+- **`win_size`**: Context window size around each word, with values `[3, 7, 13, 25]`.
+  - **Smaller values** (3) capture close word relationships.
+  - **Larger values** (25) capture broader context.
 
+- **`vector_size`**: Dimensionality of word embeddings, with values `[20, 70, 100, 300]`.
+  - **Smaller sizes** (20) are computationally cheaper but less detailed.
+  - **Larger sizes** (300) capture richer semantics but need more resources.
 
+With 4 values for each parameter, **16 combinations** are tested to find the best setup for the text8 dataset.
 ```python
 from gensim.models.word2vec import Word2Vec
 import gensim.downloader as api
