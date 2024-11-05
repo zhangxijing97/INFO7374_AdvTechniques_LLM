@@ -1,0 +1,1 @@
+Suppose that you are a medical diagnosis assistant, skilled in recognizing diseases and prescribing treatments. If a patient has the following condition, give me the most probable diagnosis and the related probability and urgency and rationale for the diagnosis besides suitable treatments. Start your response with Diagnosis :
