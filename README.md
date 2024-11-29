@@ -371,8 +371,6 @@ for i, label in enumerate(kmeans.labels_):
 - **Key Achievements**:
   - Demonstrated the potential of large-scale language modeling as an effective pretraining technique for downstream tasks such as question answering and sentiment analysis.
 
----
-
 ### **2. GPT-2 (1.5B Parameters)**
 - **Improvements**:
   - Parameter count increased from 117M to 1.5B.
@@ -382,8 +380,6 @@ for i, label in enumerate(kmeans.labels_):
   - Simulated reasoning by identifying relationships and contextual patterns.
 - **Significance**:
   - Highlighted the role of model size and diverse datasets in improving generalization.
-
----
 
 ### **3. GPT-3 (175B Parameters)**
 - **Improvements**:
@@ -395,8 +391,6 @@ for i, label in enumerate(kmeans.labels_):
 - **Significance**:
   - GPT-3 set a new standard for general-purpose AI with remarkable abilities in text generation, summarization, translation, and more.
 
----
-
 ### **4. GPT-4 (1.76 Trillion Parameters)**
 - **Improvements**:
   - Massive scale-up to 1.76 trillion parameters.
@@ -407,17 +401,35 @@ for i, label in enumerate(kmeans.labels_):
 - **Significance**:
   - Demonstrated state-of-the-art abilities in reasoning, creativity, and adaptability for diverse applications.
 
----
-
-### **Emerging Learning Paradigms**
-- **Zero-Shot Learning**: Models perform tasks they were never explicitly trained for by leveraging generalization.
-- **Few-Shot Learning**: Models learn new tasks with minimal examples, improving adaptability.
-- **Multi-Modal Learning**: Incorporates inputs from various data modalities (e.g., images, text) to tackle more complex problems.
-
----
-
 ### **Key Trends in LLM Evolution**
 1. **Scale**: Larger models with more parameters and diverse datasets lead to better performance but come with increased computational demands.
 2. **Data**: The quality and diversity of training datasets significantly affect model capabilities.
 3. **Capabilities**: Each generation of models introduced new emergent abilities, enabling more complex reasoning and problem-solving.
 4. **Applications**: From basic text completion to complex reasoning, LLMs have expanded into coding, multi-modal processing, and interactive systems.
+
+## Learning Paradigms
+
+
+### Zero-shot Learning
+Definition: Enables a model to perform tasks it hasn’t explicitly trained for. It uses knowledge from pretraining and patterns from prompts to generalize to new tasks.<br>
+Example:<br>
+Prompt: "Is the text about sports or technology? Text: 'The game was exciting.'"<br>
+Response: "The text is about sports."<br>
+Despite no specific training, the model identifies the category based on contextual patterns.<br>
+
+### One-shot Learning
+Definition: The model learns to perform tasks from a single example provided in the prompt.<br>
+Example:<br>
+Prompt: "Who won the World Cup in 2014? Germany won. Who won in 2018?"<br>
+Response: "France won the World Cup in 2018."<br>
+The model uses the single example to understand the task format and generalizes.<br>
+
+### Few-shot Learning
+Definition: Improves task performance by providing multiple examples in the prompt. The model infers patterns and applies them to similar tasks.<br>
+Example:<br>
+Prompt:<br>
+"Who won in 2010? Spain.<br>
+Who won in 2014? Germany.<br>
+Who won in 2028?"<br>
+Response: "France won in 2022."<br>
+Multiple examples help ensure consistent and accurate responses.<br>
