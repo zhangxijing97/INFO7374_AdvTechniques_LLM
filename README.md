@@ -7,7 +7,10 @@
 3. [Lecture 3](#lecture-3)
 4. [Lecture 4](#lecture-4)
 5. [Lecture 5](#lecture-5)
-5. [Lecture 6](#lecture-6)
+6. [Lecture 6](#lecture-6)
+7. [Lecture 7](#lecture-7)
+8. [Lecture 8](#lecture-8)
+9. [Lecture 9](#lecture-9)
 
 # Lecture 1
 
@@ -354,3 +357,67 @@ for i, label in enumerate(kmeans.labels_):
 **Summary**:
 - **Greedy Search**: Fast but short-sighted.
 - **Beam Search**: More thorough, considering multiple paths, often yielding more coherent sequences.
+
+# Lecture 8
+
+## Evolution of LLMs and Techniques
+
+### **1. GPT-1 (117M Parameters)**
+- **Architecture**: Transformer decoder with 12 layers.
+- **Dataset**: Trained on the BooksCorpus dataset (~4.6GB of text, over 7,000 unique books).
+- **Training Approach**:
+  - Self-supervised pretraining for predicting the next word in a sequence.
+  - Fine-tuned on specific natural language processing (NLP) tasks.
+- **Key Achievements**:
+  - Demonstrated the potential of large-scale language modeling as an effective pretraining technique for downstream tasks such as question answering and sentiment analysis.
+
+---
+
+### **2. GPT-2 (1.5B Parameters)**
+- **Improvements**:
+  - Parameter count increased from 117M to 1.5B.
+  - Training dataset grew from ~4GB to ~40GB (WebText corpus of internet text).
+- **Capabilities**:
+  - Emergence of **zero-shot learning**, where the model generalized to unseen tasks using patterns learned during pretraining.
+  - Simulated reasoning by identifying relationships and contextual patterns.
+- **Significance**:
+  - Highlighted the role of model size and diverse datasets in improving generalization.
+
+---
+
+### **3. GPT-3 (175B Parameters)**
+- **Improvements**:
+  - Parameters scaled significantly from 1.5B to 175B.
+  - Training data expanded to over 600GB.
+- **Capabilities**:
+  - Emergence of **few-shot learning**: The ability to infer rules of a task from a small number of examples.
+  - Demonstrated advanced reasoning and language capabilities across various domains.
+- **Significance**:
+  - GPT-3 set a new standard for general-purpose AI with remarkable abilities in text generation, summarization, translation, and more.
+
+---
+
+### **4. GPT-4 (1.76 Trillion Parameters)**
+- **Improvements**:
+  - Massive scale-up to 1.76 trillion parameters.
+  - Inclusion of third-party datasets and more diverse training sources.
+- **Capabilities**:
+  - Emergence of **multi-modal reasoning**, allowing the model to process and reason across multiple types of data (e.g., text and images).
+  - Enhanced performance in complex and creative tasks.
+- **Significance**:
+  - Demonstrated state-of-the-art abilities in reasoning, creativity, and adaptability for diverse applications.
+
+---
+
+### **Emerging Learning Paradigms**
+- **Zero-Shot Learning**: Models perform tasks they were never explicitly trained for by leveraging generalization.
+- **Few-Shot Learning**: Models learn new tasks with minimal examples, improving adaptability.
+- **Multi-Modal Learning**: Incorporates inputs from various data modalities (e.g., images, text) to tackle more complex problems.
+
+---
+
+### **Key Trends in LLM Evolution**
+1. **Scale**: Larger models with more parameters and diverse datasets lead to better performance but come with increased computational demands.
+2. **Data**: The quality and diversity of training datasets significantly affect model capabilities.
+3. **Capabilities**: Each generation of models introduced new emergent abilities, enabling more complex reasoning and problem-solving.
+4. **Applications**: From basic text completion to complex reasoning, LLMs have expanded into coding, multi-modal processing, and interactive systems.
