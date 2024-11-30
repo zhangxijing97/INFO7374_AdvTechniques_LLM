@@ -409,7 +409,6 @@ for i, label in enumerate(kmeans.labels_):
 
 ## Learning Paradigms
 
-
 ### Zero-shot Learning
 Definition: Enables a model to perform tasks it hasn’t explicitly trained for. It uses knowledge from pretraining and patterns from prompts to generalize to new tasks.<br>
 Example:<br>
@@ -433,3 +432,50 @@ Who won in 2014? Germany.<br>
 Who won in 2028?"<br>
 Response: "France won in 2022."<br>
 Multiple examples help ensure consistent and accurate responses.<br>
+
+### Multi-Modal Reasoning
+Definition: Combines input from different modalities (e.g., text, images) to solve complex problems.<br>
+Example:<br>
+Task: "Identify the breed of a dog in this image and describe its characteristics."<br>
+Response: The model processes the image to determine the breed and integrates text knowledge to provide detailed characteristics.<br>
+
+## Advanced Prompting Techniques
+
+### **1. Chain-of-Thought (CoT) Prompting**
+- **Definition**: Breaks a task into intermediate steps, enhancing reasoning by solving problems step-by-step.
+- **Example**:
+  - **Prompt**: "Solve step-by-step: If a bakery sells 120 muffins daily and 30% are blueberry, how many are blueberry?"
+  - **Response**:
+    1. "30% of 120 is \(0.3 \times 120 = 36\)."
+    - **Answer**: "36 muffins are blueberry."
+
+### **2. Least-to-Most (L2M) Prompting**
+- **Definition**: Decomposes a complex task into simpler sub-tasks, solving progressively harder problems.
+- **Example**:
+  - **Prompt**:
+    - Step 1: "Simplify \(2x + 3 = 7\): Subtract 3."
+    - Step 2: "Divide by 2 to solve for \(x\)."
+  - **Response**:
+    - "Step 1: \(2x = 4\)."
+    - "Step 2: \(x = 2\)."
+    - **Answer**: "x = 2."
+
+### **3. Self-Consistency (SC)**
+- **Definition**: Generates multiple reasoning paths and selects the most consistent answer to ensure reliability.
+- **Example**:
+  - **Prompt**: "How many 'r's are in 'strawberry'?"
+  - **Paths**:
+    - Path 1: "2 'r's."
+    - Path 2: "3 'r's."
+    - Path 3: "3 'r's."
+  - **Final Answer**: "3 'r's (majority vote)."
+
+### **4. Tree of Thought (ToT) Prompting**
+- **Definition**: Organizes reasoning paths hierarchically in a tree structure, exploring multiple branches for solutions.
+- **Example**:
+  - **Task**: "How can we reduce carbon emissions?"
+  - **Branches**:
+    - Renewable energy (solar, wind).
+    - Energy efficiency (buildings, behaviors).
+    - Reforestation (planting trees).
+  - **Response**: Evaluates each branch for feasibility and selects the best.
