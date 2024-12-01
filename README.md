@@ -10,6 +10,11 @@
 6. [Lecture 6](#lecture-6)
 7. [Lecture 7](#lecture-7)
 8. [Lecture 8](#lecture-8)
+   - [Evolution of LLMs](#evolution-of-llms)
+   - [Learning Paradigms](#learning-paradigms)
+   - [Advanced Prompting Techniques](#advanced-prompting-techniques)
+   - [Program-Aided Language Models (PAL)](#program-aided-language-models-pal)
+   - [Reasoning in LLMs](#reasoning-in-llms)
 9. [Lecture 9](#lecture-9)
 
 # Lecture 1
