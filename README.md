@@ -365,7 +365,7 @@ for i, label in enumerate(kmeans.labels_):
 
 # Lecture 8
 
-## Evolution of LLMs and Techniques
+## Evolution of LLMs
 
 ### **1. GPT-1 (117M Parameters)**
 - **Architecture**: Transformer decoder with 12 layers.
