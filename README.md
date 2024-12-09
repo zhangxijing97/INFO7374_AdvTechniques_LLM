@@ -465,26 +465,21 @@ In-context learning is when a model uses the context within a prompt to perform 
 Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-context learning.<br>
 
 ### In-Context Learning
-
+- **Definition**: Employs the model's ability to understand and perform tasks based on context provided within the prompt, adapting based on provided examples.
 - **Example**:
-  - **Prompt**: "Solve the problem step-by-step.<br>
-1-start from first left character of the word<br>
-2-if the character is "r" add one to total number of "r"s<br>
-repeat 1 then 2 till the last character of the word<br>
-how many "r"s are in the word "strawberry"?"<br>
+  - **Prompt**: "Solve the problem step-by-step. Start from the first left character of the word 'strawberry'. If the character is 'r', add one to the total number of 'r's. Repeat until the last character of the word. How many 'r's are in the word 'strawberry'?"
   - **Response**:
-    1. "Let’s go step-by-step through "strawberry":<br>
-    s: Not "r," so the count is 0.<br>
-    t: Not "r," so the count is still 0.<br>
-    r: This is "r," so add 1. Count = 1.<br>
-    a: Not "r," count remains 1.<br>
-    w: Not "r," count remains 1.<br>
-    b: Not "r," count remains 1.<br>
-    e: Not "r," count remains 1.<br>
-    r: This is "r," so add 1. Count = 2.<br>
-    r: This is "r," so add 1. Count = 3.<br>
-    y: Not "r," count remains 3.<br>
-    So, there are 3 "r"s in the word "strawberry."<br>
+    1. "s: Not 'r,' so the count is 0."
+    2. "t: Not 'r,' so the count remains 0."
+    3. "r: This is 'r,' add 1. Count = 1."
+    4. "a: Not 'r,' count remains 1."
+    5. "w: Not 'r,' count remains 1."
+    6. "b: Not 'r,' count remains 1."
+    7. "e: Not 'r,' count remains 1."
+    8. "r: This is 'r,' add 1. Count = 2."
+    9. "r: This is 'r,' add 1. Count = 3."
+    10. "y: Not 'r,' count remains 3."
+    - **Final Answer**: "There are 3 'r's in the word 'strawberry'."
 
 ### Chain of Thought Prompting
 - **Definition**: Breaks a task into intermediate steps, enhancing reasoning by solving problems step-by-step.
