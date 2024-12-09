@@ -20,18 +20,15 @@
    - [Evolution of LLMs](#evolution-of-llms)
    - [Learning Techniques](#learning-techniques)
      - [Zero-shot Learning](#zero-shot-learning)
-     - [Few-shot Learning](#few-shot-learning)
      - [One-shot Learning](#one-shot-learning)
+     - [Few-shot Learning](#few-shot-learning)
    - [Prompt Engineering](#prompt-engineering)
-     - [Types of Prompting](#types-of-prompting)
-   - [In-Context Learning](#in-context-learning)
-   - [Chain of Thought Prompting](#chain-of-thought-prompting)
-   - [Program-Aided Language Model (PAL)](#program-aided-language-model-pal)
-   - [Advanced Prompting Techniques](#advanced-prompting-techniques)
+     - [In-Context Learning](#in-context-learning)
+     - [Chain of Thought Prompting](#chain-of-thought-prompting)
+     - [Program-Aided Language Model (PAL)](#program-aided-language-model-pal)
+     - [Advanced Prompting Techniques](#advanced-prompting-techniques)
      - [Self-Consistency](#self-consistency)
      - [Tree of Thought Prompting](#tree-of-thought-prompting)
-   - [Prompt Security Risks and Best Practices](#prompt-security-risks-and-best-practices)
-   - [Applications and Best Practices](#applications-and-best-practices)
 9. [Lecture 9](#lecture-9)
    - [Program aided language model (PAL)](#program-aided-language-model-pal)
    - [RAG (Vector Database)](#rag-vector-database)
@@ -434,7 +431,7 @@ for i, label in enumerate(kmeans.labels_):
 3. **Capabilities**: Each generation of models introduced new emergent abilities, enabling more complex reasoning and problem-solving.
 4. **Applications**: From basic text completion to complex reasoning, LLMs have expanded into coding, multi-modal processing, and interactive systems.
 
-## Learning Paradigms
+## Learning Techniques
 
 ### Zero-shot Learning
 Definition: Enables a model to perform tasks it hasn’t explicitly trained for. It uses knowledge from pretraining and patterns from prompts to generalize to new tasks.<br>
@@ -460,13 +457,7 @@ Who won in 2028?"<br>
 Response: "France won in 2022."<br>
 Multiple examples help ensure consistent and accurate responses.<br>
 
-### Multi-Modal Reasoning
-Definition: Combines input from different modalities (e.g., text, images) to solve complex problems.<br>
-Example:<br>
-Task: "Identify the breed of a dog in this image and describe its characteristics."<br>
-Response: The model processes the image to determine the breed and integrates text knowledge to provide detailed characteristics.<br>
-
-## Advanced Prompting Techniques
+## Prompt Engineering
 
 ### **1. Chain-of-Thought (CoT) Prompting**
 - **Definition**: Breaks a task into intermediate steps, enhancing reasoning by solving problems step-by-step.
