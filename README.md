@@ -484,58 +484,30 @@ Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-con
 ### Chain of Thought Prompting
 - **Definition**: Breaks a task into intermediate steps, enhancing reasoning by solving problems step-by-step.
 - **Example**:
-  - **Prompt**: "Solve step-by-step: If a bakery sells 120 muffins daily and 30% are blueberry, how many are blueberry?"
+  - **Prompt**: "Solve step-by-step: Calculate the area of a right triangle with a base of 3 meters and a height of 4 meters."
   - **Response**:
-    1. "30% of 120 is \(0.3 \times 120 = 36\)."
-    - **Answer**: "36 muffins are blueberry."
+    1. "First, I recognize that the formula for the area of a right triangle is `Area = 0.5 * base * height`."
+    2. "The base of the triangle is 3 meters, and the height is 4 meters."
+    3. "Plugging in the values: `Area = 0.5 * 3 * 4`."
+    4. "Perform the multiplication: `Area = 0.5 * 12 = 6`."
+    5. "Therefore, the area of the triangle is 6 square meters."
+    - **Answer**: "6 square meters."
 
-### **2. Least-to-Most (L2M) Prompting**
-- **Definition**: Decomposes a complex task into simpler sub-tasks, solving progressively harder problems.
-- **Example**:
-  - **Prompt**:
-    - Step 1: "Simplify \(2x + 3 = 7\): Subtract 3."
-    - Step 2: "Divide by 2 to solve for \(x\)."
-  - **Response**:
-    - "Step 1: \(2x = 4\)."
-    - "Step 2: \(x = 2\)."
-    - **Answer**: "x = 2."
-
-### **3. Self-Consistency (SC)**
-- **Definition**: Generates multiple reasoning paths and selects the most consistent answer to ensure reliability.
-- **Example**:
-  - **Prompt**: "How many 'r's are in 'strawberry'?"
-  - **Paths**:
-    - Path 1: "2 'r's."
-    - Path 2: "3 'r's."
-    - Path 3: "3 'r's."
-  - **Final Answer**: "3 'r's (majority vote)."
-
-### **4. Tree of Thought (ToT) Prompting**
-- **Definition**: Organizes reasoning paths hierarchically in a tree structure, exploring multiple branches for solutions.
-- **Example**:
-  - **Task**: "How can we reduce carbon emissions?"
-  - **Branches**:
-    - Renewable energy (solar, wind).
-    - Energy efficiency (buildings, behaviors).
-    - Reforestation (planting trees).
-  - **Response**: Evaluates each branch for feasibility and selects the best.
-
-## Program-Aided Language Models (PAL)
-
+### Program-Aided Language Models (PAL)
 **Program-Aided Language Models (PAL)** combine LLM reasoning with programmatic tools to solve tasks requiring logic, calculations, or structured problem-solving.
 
-## Steps
+#### Steps
 1. **Combining Natural Language and Code**: LLMs generate code to solve sub-tasks, which is executed in an external programming environment.
 2. **Enhanced Accuracy**: Results are programmatically verified, reducing errors in reasoning.
 3. **Transparency**: Intermediate steps provide interpretable solutions.
 
-## Workflow
+#### Workflow
 1. **Task Decomposition**: LLM breaks the problem into smaller steps.
 2. **Code Generation**: LLM generates code for each step.
 3. **Code Execution**: The code runs in a programming environment.
 4. **Output Integration**: Results are combined into a coherent response.
 
-## Example
+#### Example
 **Task**: How many 'r's are in "strawberry"?  
 **Solution Using PAL**:
 1. **Decomposition**: Identify the task (count occurrences of "r").
@@ -547,15 +519,48 @@ Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-con
 3. **Execution**: Run the function to get `3`.
 4. **Response**: "The word 'strawberry' contains 3 'r's."
 
-## Advantages
+#### Advantages
 - **Precision**: Ensures accurate results.
 - **Explainability**: Provides interpretable intermediate steps.
 - **Flexibility**: Solves complex tasks programmatically.
 
-## Limitations
+#### Limitations
 - Requires external environments for execution.
 - Errors in generated code can propagate.
 - Not effective for tasks unsuited to programmatic solutions.
+
+### Least-to-Most Prompting
+- **Definition**: Decomposes a complex task into simpler sub-tasks, solving progressively harder problems.
+- **Example**:
+  - **Prompt**: "Let’s break down the problem of finding the area of a right triangle into simpler steps, starting with understanding the formula and then calculating progressively."
+  - **Step 1**: "What is the formula for the area of a right triangle?"
+    - **Response**: "The formula is `Area = 0.5 * base * height`."
+  - **Step 2**: "Given a base of 3 meters, how would you find the half of this base?"
+    - **Response**: "Half of the base is `0.5 * 3 = 1.5` meters."
+  - **Step 3**: "Now multiply the result from Step 2 by the height of 4 meters to find the area."
+    - **Response**: "The area is `1.5 * 4 = 6` square meters."
+  - **Final Step**: "What is the total area of the triangle?"
+    - **Final Answer**: "The area of the triangle is 6 square meters."
+
+### Self-Consistency (SC)
+- **Definition**: Generates multiple reasoning paths and selects the most consistent answer to ensure reliability.
+- **Example**:
+  - **Prompt**: "How many 'r's are in 'strawberry'?"
+  - **Paths**:
+    - Path 1: "2 'r's."
+    - Path 2: "3 'r's."
+    - Path 3: "3 'r's."
+  - **Final Answer**: "3 'r's (majority vote)."
+
+### Tree of Thought (ToT) Prompting
+- **Definition**: Organizes reasoning paths hierarchically in a tree structure, exploring multiple branches for solutions.
+- **Example**:
+  - **Task**: "How can we reduce carbon emissions?"
+  - **Branches**:
+    - Renewable energy (solar, wind).
+    - Energy efficiency (buildings, behaviors).
+    - Reforestation (planting trees).
+  - **Response**: Evaluates each branch for feasibility and selects the best.
 
 ## Reasoning in LLMs
 
