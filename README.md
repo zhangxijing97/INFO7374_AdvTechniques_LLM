@@ -3,23 +3,42 @@
 ## Table of Contents
 
 1. [Lecture 1](#lecture-1)
+   - [Supervised Learning and Unsupervised Learning](#supervised-learning-and-unsupervised-learning)
+   - [K Nearest Neighbor (KNN)](#k-nearest-neighbor-knn)
 2. [Lecture 2](#lecture-2)
 3. [Lecture 3](#lecture-3)
 4. [Lecture 4](#lecture-4)
+   - [Self-consistency](#self-consistency)
 5. [Lecture 5](#lecture-5)
 6. [Lecture 6](#lecture-6)
+   - [Fine-tuning Methods](#fine-tuning-methods)
+   - [Calibration](#calibration)
+   - [Self-consistency](#self-consistency-1)
 7. [Lecture 7](#lecture-7)
+   - [Fine-tuning Methods](#fine-tuning-methods-1)
 8. [Lecture 8](#lecture-8)
    - [Evolution of LLMs](#evolution-of-llms)
    - [Learning Paradigms](#learning-paradigms)
    - [Advanced Prompting Techniques](#advanced-prompting-techniques)
    - [Program-Aided Language Models (PAL)](#program-aided-language-models-pal)
    - [Reasoning in LLMs](#reasoning-in-llms)
+   - [Few-shot Learning](#few-shot-learning)
+   - [Chain of Thought](#chain-of-thought)
 9. [Lecture 9](#lecture-9)
+   - [Program aided language model (PAL)](#program-aided-language-model-pal)
+   - [RAG (Vector Database)](#rag-vector-database)
+
 
 # Lecture 1
 
-## Supervised Learning and K-Nearest Neighbors (KNN)
+## Supervised Learning and Unsupervised Learning
+
+| **Type**               | **Training Data**  | **Purpose**                    | **Common Uses**                           |
+|------------------------|--------------------|--------------------------------|-------------------------------------------|
+| **Supervised**         | Labeled            | Predict known outputs          | Classification, regression                |
+| **Unsupervised**       | Unlabeled          | Discover data patterns         | Clustering, dimensionality reduction      |
+
+## K Nearest Neighbor (KNN)
 
 1. **Training the Model with `train_x` and `train_y`**:
    - Using `knn.fit(train_x, train_y)`, we store the `train_x` data points and their corresponding labels from `train_y`. KNN doesn’t learn parameters but simply stores the training data.
