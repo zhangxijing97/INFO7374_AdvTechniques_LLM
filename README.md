@@ -11,11 +11,8 @@
    - [Self-consistency](#self-consistency)
 5. [Lecture 5](#lecture-5)
 6. [Lecture 6](#lecture-6)
-   - [Fine-tuning Methods](#fine-tuning-methods)
-   - [Calibration](#calibration)
-   - [Self-consistency](#self-consistency-1)
 7. [Lecture 7](#lecture-7)
-   - [Fine-tuning Methods](#fine-tuning-methods-1)
+   - [Calibration](#calibration)
 8. [Lecture 8](#lecture-8)
    - [Evolution of LLMs](#evolution-of-llms)
    - [Learning Techniques](#learning-techniques)
@@ -29,7 +26,6 @@
      - [Self-Consistency](#self-consistency)
      - [Tree of Thought Prompting](#tree-of-thought-prompting)
 9. [Lecture 9](#lecture-9)
-   - [Program aided language model (PAL)](#program-aided-language-model-pal)
    - [RAG (Vector Database)](#rag-vector-database)
 
 
@@ -381,6 +377,57 @@ for i, label in enumerate(kmeans.labels_):
 - **Greedy Search**: Fast but short-sighted.
 - **Beam Search**: More thorough, considering multiple paths, often yielding more coherent sequences.
 
+### Decoding Strategies
+
+#### **1. Greedy Search**
+- **Definition**: Chooses the most probable next word at each step.
+- **Example**: For the prompt "I feel," it might always choose "good" as the next word because it's the most common continuation.
+
+#### **2. Beam Search**
+- **Definition**: Considers several top possibilities at each step, keeping the best sequences based on cumulative probabilities.
+- **Example**: For "I feel," it might keep sequences like "I feel happy," "I feel good," and "I feel tired," and choose the best at the end.
+
+#### **3. Top-k Sampling**
+- **Definition**: Randomly selects the next word from the top k most likely candidates.
+- **Example**: If "happy," "good," and "great" are the top-3 words, top-k sampling might randomly pick "great" even if it's not the highest probability.
+
+#### **4. Nucleus Sampling (Top-p Sampling)**
+- **Definition**: Chooses the next word from a dynamically sized set of top candidates that together exceed a probability threshold p.
+- **Example**: It might consider words that cumulatively make up 90% probability, choosing among "happy," "good," "great," depending on which set crosses the threshold first.
+
+#### **5. Temperature Setting**
+- **Definition**: Adjusts the probability distribution of the next word, affecting the randomness of the choice.
+- **Example**: With a high temperature, less likely words might be chosen, leading to "I feel ecstatic" instead of just "good."
+
+Each strategy has its applications depending on the desired balance between randomness and accuracy in text generation.
+
+# Lecture 7
+
+## Calibration
+
+### **Definition of LLM Calibration**
+LLM Calibration is about making sure that when a language model says it's confident about an answer, that answer is likely to be correct. This process aligns the model's confidence with the true accuracy of its predictions.
+
+### **Why Calibration is Important**
+Calibration is crucial because it ensures that:
+- Confident predictions are trustworthy.
+- The model acknowledges when it's unsure about an answer.
+
+### **How to Measure Calibration**
+Calibration is typically measured using the **Expected Calibration Error (ECE)**, which looks at the difference between how confident the model is and how often it's actually right. This is done by:
+1. Dividing predictions into groups based on confidence levels.
+2. Comparing the real accuracy of each group to its confidence.
+3. Averaging these differences to get the ECE.
+
+### **Techniques for Improving Calibration**
+To improve calibration, you can use:
+- **Temperature Scaling**: Adjusts how the model calculates confidence, making it more or less sure about its answers.
+- **Platt Scaling**: Uses a simple formula to adjust the predicted probabilities, making them match up better with real-world outcomes.
+- **Ensemble Methods**: Combines predictions from several models to make overall predictions more reliable and well-calibrated.
+
+### **Practical Example**
+In a medical diagnosis tool, calibration makes sure that if a model is 90% confident in a diagnosis, it should be correct about 90% of the time. This is vital in healthcare, where being wrong could have serious consequences.
+
 # Lecture 8
 
 ## Evolution of LLMs
@@ -627,3 +674,7 @@ Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-con
       Step 2: Subtract the discount from the original price: $100 - $20 = $80.
       Answer: The sale price is $80.
       ```
+
+# Lecture 9
+
+## RAG (Vector Database)
