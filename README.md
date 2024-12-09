@@ -460,7 +460,38 @@ Multiple examples help ensure consistent and accurate responses.<br>
 
 ### In-Context Learning
 
-In-context learning is when a model uses the context within a prompt to perform tasks it wasn't explicitly trained to do. Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-context learning.<br>
+In-context learning is when a model uses the context within a prompt to perform tasks it wasn't explicitly trained to do.<br>
+
+Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-context learning.<br>
+
+### In-Context Learning
+
+- **Example**:
+  - **Prompt**: "Solve the problem step-by-step.
+1-start from first left character of the word
+2-if the character is "r" add one to total number of "r"s
+repeat 1 then 2 till the last character of the word
+how many "r"s are in the word "strawberry"?"
+  - **Response**:
+    1. "Let’s go step-by-step through "strawberry":
+    s: Not "r," so the count is 0.
+    t: Not "r," so the count is still 0.
+    r: This is "r," so add 1. Count = 1.
+    a: Not "r," count remains 1.
+    w: Not "r," count remains 1.
+    b: Not "r," count remains 1.
+    e: Not "r," count remains 1.
+    r: This is "r," so add 1. Count = 2.
+    r: This is "r," so add 1. Count = 3.
+    y: Not "r," count remains 3.
+    So, there are 3 "r"s in the word "strawberry."
+
+Solve the problem step-by-step.
+1-start from first left character of the word
+2-if the character is "r" add one to total number of "r"s
+repeat 1 then 2 till the last character of the word
+how many "r"s are in the word "strawberry"?
+
 
 ### Chain of Thought Prompting
 - **Definition**: Breaks a task into intermediate steps, enhancing reasoning by solving problems step-by-step.
