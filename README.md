@@ -26,7 +26,6 @@
      - [In-Context Learning](#in-context-learning)
      - [Chain of Thought Prompting](#chain-of-thought-prompting)
      - [Program-Aided Language Model (PAL)](#program-aided-language-model-pal)
-     - [Advanced Prompting Techniques](#advanced-prompting-techniques)
      - [Self-Consistency](#self-consistency)
      - [Tree of Thought Prompting](#tree-of-thought-prompting)
 9. [Lecture 9](#lecture-9)
@@ -459,9 +458,11 @@ Multiple examples help ensure consistent and accurate responses.<br>
 
 ## Prompt Engineering
 
-### **1. Chain-of-Thought (CoT) Prompting**
+### In-Context Learning
 
-### **1. Chain-of-Thought (CoT) Prompting**
+In-context learning is when a model uses the context within a prompt to perform tasks it wasn't explicitly trained to do. Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-context learning.<br>
+
+### Chain of Thought Prompting
 - **Definition**: Breaks a task into intermediate steps, enhancing reasoning by solving problems step-by-step.
 - **Example**:
   - **Prompt**: "Solve step-by-step: If a bakery sells 120 muffins daily and 30% are blueberry, how many are blueberry?"
