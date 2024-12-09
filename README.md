@@ -464,7 +464,6 @@ In-context learning is when a model uses the context within a prompt to perform 
 
 Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-context learning.<br>
 
-### In-Context Learning
 - **Definition**: Employs the model's ability to understand and perform tasks based on context provided within the prompt, adapting based on provided examples.
 - **Example**:
   - **Prompt**: "Solve the problem step-by-step. Start from the first left character of the word 'strawberry'. If the character is 'r', add one to the total number of 'r's. Repeat until the last character of the word. How many 'r's are in the word 'strawberry'?"
@@ -552,7 +551,7 @@ Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-con
     - Path 3: "3 'r's."
   - **Final Answer**: "3 'r's (majority vote)."
 
-### Tree of Thought (ToT) Prompting
+### Tree of Thought Prompting
 - **Definition**: Organizes reasoning paths hierarchically in a tree structure, exploring multiple branches for solutions.
 - **Example**:
   - **Task**: "How can we reduce carbon emissions?"
@@ -561,6 +560,9 @@ Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-con
     - Energy efficiency (buildings, behaviors).
     - Reforestation (planting trees).
   - **Response**: Evaluates each branch for feasibility and selects the best.
+
+### CoT vs SC vs ToT
+![This is an example image](Image/image01.jpg)
 
 ## Reasoning in LLMs
 
