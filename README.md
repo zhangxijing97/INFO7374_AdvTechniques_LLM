@@ -493,7 +493,7 @@ Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-con
     5. "Therefore, the area of the triangle is 6 square meters."
     - **Answer**: "6 square meters."
 
-### Program-Aided Language Models (PAL)
+### Program-Aided Language Model (PAL)
 **Program-Aided Language Models (PAL)** combine LLM reasoning with programmatic tools to solve tasks requiring logic, calculations, or structured problem-solving.
 
 #### Steps
@@ -542,7 +542,7 @@ Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-con
   - **Final Step**: "What is the total area of the triangle?"
     - **Final Answer**: "The area of the triangle is 6 square meters."
 
-### Self-Consistency (SC)
+### Self-Consistency
 - **Definition**: Generates multiple reasoning paths and selects the most consistent answer to ensure reliability.
 - **Example**:
   - **Prompt**: "How many 'r's are in 'strawberry'?"
