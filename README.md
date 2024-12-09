@@ -467,31 +467,24 @@ Zero-shot Learning, One-shot Learning, and Few-shot Learning are types of in-con
 ### In-Context Learning
 
 - **Example**:
-  - **Prompt**: "Solve the problem step-by-step.
-1-start from first left character of the word
-2-if the character is "r" add one to total number of "r"s
-repeat 1 then 2 till the last character of the word
-how many "r"s are in the word "strawberry"?"
+  - **Prompt**: "Solve the problem step-by-step.<br>
+1-start from first left character of the word<br>
+2-if the character is "r" add one to total number of "r"s<br>
+repeat 1 then 2 till the last character of the word<br>
+how many "r"s are in the word "strawberry"?"<br>
   - **Response**:
-    1. "Let’s go step-by-step through "strawberry":
-    s: Not "r," so the count is 0.
-    t: Not "r," so the count is still 0.
-    r: This is "r," so add 1. Count = 1.
-    a: Not "r," count remains 1.
-    w: Not "r," count remains 1.
-    b: Not "r," count remains 1.
-    e: Not "r," count remains 1.
-    r: This is "r," so add 1. Count = 2.
-    r: This is "r," so add 1. Count = 3.
-    y: Not "r," count remains 3.
-    So, there are 3 "r"s in the word "strawberry."
-
-Solve the problem step-by-step.
-1-start from first left character of the word
-2-if the character is "r" add one to total number of "r"s
-repeat 1 then 2 till the last character of the word
-how many "r"s are in the word "strawberry"?
-
+    1. "Let’s go step-by-step through "strawberry":<br>
+    s: Not "r," so the count is 0.<br>
+    t: Not "r," so the count is still 0.<br>
+    r: This is "r," so add 1. Count = 1.<br>
+    a: Not "r," count remains 1.<br>
+    w: Not "r," count remains 1.<br>
+    b: Not "r," count remains 1.<br>
+    e: Not "r," count remains 1.<br>
+    r: This is "r," so add 1. Count = 2.<br>
+    r: This is "r," so add 1. Count = 3.<br>
+    y: Not "r," count remains 3.<br>
+    So, there are 3 "r"s in the word "strawberry."<br>
 
 ### Chain of Thought Prompting
 - **Definition**: Breaks a task into intermediate steps, enhancing reasoning by solving problems step-by-step.
