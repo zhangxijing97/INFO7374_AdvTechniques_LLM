@@ -460,6 +460,8 @@ Multiple examples help ensure consistent and accurate responses.<br>
 ## Prompt Engineering
 
 ### **1. Chain-of-Thought (CoT) Prompting**
+
+### **1. Chain-of-Thought (CoT) Prompting**
 - **Definition**: Breaks a task into intermediate steps, enhancing reasoning by solving problems step-by-step.
 - **Example**:
   - **Prompt**: "Solve step-by-step: If a bakery sells 120 muffins daily and 30% are blueberry, how many are blueberry?"
