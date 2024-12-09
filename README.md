@@ -18,12 +18,20 @@
    - [Fine-tuning Methods](#fine-tuning-methods-1)
 8. [Lecture 8](#lecture-8)
    - [Evolution of LLMs](#evolution-of-llms)
-   - [Learning Paradigms](#learning-paradigms)
+   - [Learning Techniques](#learning-techniques)
+     - [Zero-shot Learning](#zero-shot-learning)
+     - [Few-shot Learning](#few-shot-learning)
+     - [One-shot Learning](#one-shot-learning)
+   - [Prompt Engineering](#prompt-engineering)
+     - [Types of Prompting](#types-of-prompting)
+   - [In-Context Learning](#in-context-learning)
+   - [Chain of Thought Prompting](#chain-of-thought-prompting)
+   - [Program-Aided Language Model (PAL)](#program-aided-language-model-pal)
    - [Advanced Prompting Techniques](#advanced-prompting-techniques)
-   - [Program-Aided Language Models (PAL)](#program-aided-language-models-pal)
-   - [Reasoning in LLMs](#reasoning-in-llms)
-   - [Few-shot Learning](#few-shot-learning)
-   - [Chain of Thought](#chain-of-thought)
+     - [Self-Consistency](#self-consistency)
+     - [Tree of Thought Prompting](#tree-of-thought-prompting)
+   - [Prompt Security Risks and Best Practices](#prompt-security-risks-and-best-practices)
+   - [Applications and Best Practices](#applications-and-best-practices)
 9. [Lecture 9](#lecture-9)
    - [Program aided language model (PAL)](#program-aided-language-model-pal)
    - [RAG (Vector Database)](#rag-vector-database)
@@ -40,12 +48,9 @@
 
 ## K Nearest Neighbor (KNN)
 
-1. **Training the Model with `train_x` and `train_y`**:
-   - Using `knn.fit(train_x, train_y)`, we store the `train_x` data points and their corresponding labels from `train_y`. KNN doesn’t learn parameters but simply stores the training data.
-
-2. **Predicting Labels for `test_x`**:
-   - When calling `knn.predict(test_x)`, each point in `test_x` is compared to all points in `train_x` to find its \(k\) nearest neighbors.
-   - Classification Decision: The model assigns each `test_x` point the most common label among its \(k\) nearest neighbors in `train_x`. For example, The 3 nearest points in example is Dog (2/3), so we classify the new data point as a Dog.
+- KNN is a supervised learning technique (Classifier).
+- Classify a new data point by calculating the distance between existing training examples.
+- Similar means similar feature values (nearest feature values)
 
 ### K-Nearest Neighbors (KNN) Example
 
