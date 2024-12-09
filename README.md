@@ -72,12 +72,12 @@ We have a new animal with a height of 53 cm and a weight of 8 kg. We want to cla
 #### 3. Calculate Distances
 Calculate the Euclidean distance between the new point and each existing point in the dataset:
 
-- Distance to (50, 8) = \( \sqrt{(53-50)^2 + (8-8)^2} = 3 \)
-- Distance to (55, 9) = \( \sqrt{(53-55)^2 + (8-9)^2} \approx 2.24 \)
-- Distance to (60, 11) = \( \sqrt{(53-60)^2 + (8-11)^2} \approx 7.62 \)
-- Distance to (45, 5) = \( \sqrt{(53-45)^2 + (8-5)^2} \approx 8.54 \)
-- Distance to (48, 6) = \( \sqrt{(53-48)^2 + (8-6)^2} \approx 5.39 \)
-- Distance to (52, 7) = \( \sqrt{(53-52)^2 + (8-7)^2} \approx 1.41 \)
+- Distance to (50, 8) = sqrt((53-50)^2 + (8-8)^2) = 3
+- Distance to (55, 9) = sqrt((53-55)^2 + (8-9)^2) = 2.24
+- Distance to (60, 11) = sqrt((53-60)^2 + (8-11)^2) = 7.62
+- Distance to (45, 5) = sqrt((53-45)^2 + (8-5)^2) = 8.54
+- Distance to (48, 6) = sqrt((53-48)^2 + (8-6)^2) = 5.39
+- Distance to (52, 7) = sqrt((53-52)^2 + (8-7)^2) = 1.41
 
 #### 4. Find Nearest Neighbors
 The 3 nearest points to (53, 8) are:
@@ -86,9 +86,7 @@ The 3 nearest points to (53, 8) are:
 - (50, 8) labeled "Dog"
 
 #### 5. Prediction
-With \( K=3 \), the most common class among the nearest neighbors is "Dog" (2 out of 3). Therefore, we classify the new data point as a **Dog**.
-
----
+With K=3 , the most common class among the nearest neighbors is "Dog" (2 out of 3). Therefore, we classify the new data point as a **Dog**.
 
 ### Key Points of KNN
 - **Interpretability**: KNN is highly interpretable as it bases predictions directly on existing data.
